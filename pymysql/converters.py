@@ -7,6 +7,7 @@ import time
 
 from .constants import FIELD_TYPE, FLAG
 from .charset import charset_by_id, charset_to_encoding
+import json
 
 
 def escape_item(val, charset, mapping=None):
@@ -410,6 +411,7 @@ decoders = {
     FIELD_TYPE.VARCHAR: through,
     FIELD_TYPE.DECIMAL: Decimal,
     FIELD_TYPE.NEWDECIMAL: Decimal,
+    FIELD_TYPE.JSON: json.loads
 }
 
 
